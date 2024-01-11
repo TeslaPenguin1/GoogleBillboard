@@ -6,14 +6,16 @@ public double num;
 public void setup() {            
   n = 2;
   num = 0;
+  noLoop();
 }  
 public void draw() {   
+  System.out.println("Problem 1:");
   while (!isPrime(num)) {
     numString = e.substring(n,n+10);
     num = Double.parseDouble(numString);
-    System.out.println(num);
     n++;
   }
+  System.out.println(numString);
 }  
 public boolean isPrime(double input) {   
     if (input < 2) return false;
