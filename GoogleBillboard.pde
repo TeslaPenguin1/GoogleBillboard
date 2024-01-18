@@ -16,9 +16,29 @@ public void draw() {
     n++;
   }
   System.out.println(numString);
+  
+  num = 0;
+  n = 2;
+  int x = 0;
+  
+  System.out.println("Problem 2:");
+  while (x < 5) {
+    numString = e.substring(n,n+10);
+    num = Double.parseDouble(numString);
+    n++;
+    if (sums49(numString)) x++;
+  }
+  System.out.println(numString);
 }  
 public boolean isPrime(double input) {   
     if (input < 2) return false;
     for (int i = 2; i <= Math.sqrt(input); i++) if (input % i == 0) return false;
     return true;  
-} 
+}
+public boolean sums49(String input) {
+  double sum = 0;
+  for(int i = 0; i < input.length(); i++) {
+    sum += Double.parseDouble(input.substring(i,i+1));
+  }
+  return sum == 49;
+}
